@@ -72,34 +72,34 @@ var randomItem = selectRandomItem(items);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "POPKID;;;" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*╭━━━━━━━━━━━━━━━━━━━━━╮
-┃  🩵 POPKID-XTR USER 🩵  ┃
-╰━━━━━━━━━━━━━━━━━━━━━╯
+                        let desc = `┏━━━━━━━━━━━━━━😘
+┃👑┃ *BILAL-MD CONNECTED* 
+┃👑┃ *SESSION-ID RECEIVED*
+┗━━━━━━━━━━━━━━━😘
+*________________________________*
+*👑 BILAL-MD REPO 👑*
+*github.com/BilalTech05/BILAL-MD*
+*________________________________*
+▬▬▬▬▬▬▬▬▬▬▬▬
+*👑 BILAL-MD HELP 👑*
+▬▬▬▬▬▬▬▬▬▬▬▬
+*________________________________*
+*👑 WHATSAPP GROUP 👑*
+*https://chat.whatsapp.com/BwWffeDwiqe6cjDDklYJ5m?mode=ems_copy_t*
 
-🙋 Hello there, POPKID-XTR User!  
-
-> ⚠️ *Do not share your session ID with your GF!* 🤖 
-
-✅ **Thanks for using POPKID-XTR!** 🔰 
-
-━━━━━━━━━━━━━━━━━━━━━━━  
-
-📢 **Join our WhatsApp Channel:**  
-🔗 https://whatsapp.com/channel/0029VbB6d0KKAwEdvcgqrH26  
-
-⭐ **Don't forget to fork the repo:**  
-🔗 https://github.com/kenyanpopkid/POPKID-XTR 
-
-━━━━━━━━━━━━━━━━━━━━━━━  
-
-> *© popkid devs 🩵*`;
+*________________________________*
+*👑 DEVELPER 👑*
+*https://akaserein.github.io/Bilal/*
+*________________________________*
+*_PLEASE BILAL-MD REPO KO STAR LAZMI KARNA 🥰❤️_*
+*________________________________*`;
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: " 𝖇𝖔𝖙 𝖈𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉",
-thumbnailUrl: "https://i.ibb.co/6cBHT8tC/popkid.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029VbB6d0KKAwEdvcgqrH26",
+title: "👑 BILAL-MD BOT 👑",
+thumbnailUrl: "https://files.catbox.moe/kunzpz.png",
+sourceUrl: "https://whatsapp.com/channel/0029Vaj3Xnu17EmtDxTNnQ0G",
 mediaType: 1,
 renderLargerThumbnail: true
 }  
@@ -108,32 +108,32 @@ renderLargerThumbnail: true
 {quoted:code })
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `*╭━━━━━━━━━━━━━━━━━━━━━╮
-┃  🩵 POPKID-XTR USER 🩵 ┃
-╰━━━━━━━━━━━━━━━━━━━━━╯
+                            let desc = `┏━━━━━━━━━━━━━━😘
+┃👑┃ *BILAL-MD CONNECTED* 
+┃👑┃ *SESSION-ID RECEIVED*
+┗━━━━━━━━━━━━━━━😘
+*________________________________*
+*👑 BILAL-MD REPO 👑*
+*github.com/BilalTech05/BILAL-MD*
+*________________________________*
+▬▬▬▬▬▬▬▬▬▬▬▬
+*👑 BILAL-MD HELP 👑*
+▬▬▬▬▬▬▬▬▬▬▬▬
+*________________________________*
+*👑 WHATSAPP GROUP 👑*
+*https://chat.whatsapp.com/BwWffeDwiqe6cjDDklYJ5m?mode=ems_copy_t*
 
-🙋 Hello there POPKID-XTR User!  
-
-> ⚠️ *Do not share your session ID with your GF!* 🤖  
-
-✅ **Thanks for using POPKID-XTR!** 🔰  
-
-━━━━━━━━━━━━━━━━━━━━━━━  
-
-📢 **Join our WhatsApp Channel:**  
-🔗 https://whatsapp.com/channel/0029VbB6d0KKAwEdvcgqrH26  
-
-⭐ **Don't forget to fork the repo:**  
-🔗 https://github.com/kenyanpopkid/POPKID-XTR   
-
-━━━━━━━━━━━━━━━━━━━━━━━  
-
-> *© Powered 𝙽𝙾𝚅𝙰-𝚇𝙼𝙳 🩵*`;
+*________________________________*
+*👑 DEVELPER 👑*
+*https://akaserein.github.io/Bilal/*
+*________________________________*
+*_PLEASE BILAL-MD REPO KO STAR LAZMI KARNA 🥰❤️_*
+*________________________________*`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: " 𝖒𝖉 𝖈𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉 ✅  ",
+title: "👑 BILAL-MD BOT 👑*",
 thumbnailUrl: "https://i.ibb.co/6cBHT8tC/popkid.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VbB6d0KKAwEdvcgqrH26",
 mediaType: 2,

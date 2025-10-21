@@ -6,20 +6,38 @@
   <title>👑 PAIR CODE 👑</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      background: black;
       font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 🔥 Background Video Style */
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* maintain full-screen coverage */
+      z-index: -1;
     }
 
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 10;
     }
 
     .box {
@@ -28,11 +46,9 @@
       padding: 20px;
       position: relative;
       text-align: center;
-      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.8);
       border-radius: 10px;
-      transform: perspective(1000px) rotateY(0deg);
       box-shadow: 0 0 20px rgba(250, 249, 249, 0.7);
-      position: relative;
     }
 
     #text {
@@ -45,14 +61,13 @@
 
     .centered-text {
       color: #e9e4e4;
+      text-align: center;
     }
 
     .input-container {
       display: flex;
       background: rgb(10, 10, 10);
       border-radius: 1rem;
-      background: black;
-      box-shadow: black;
       padding: 0.3rem;
       gap: 0.3rem;
       max-width: 300px;
@@ -64,7 +79,6 @@
       background: #e8e8e8;
       box-shadow: inset 13px 13px 10px #dcdcdc, inset -13px -13px 10px #f4f4f4;
       width: 100%;
-      flex-basis: 75%;
       padding: 1rem;
       border: none;
       border-left: 2px solid #ecf2f8;
@@ -79,7 +93,6 @@
     }
 
     .input-container button {
-      flex-basis: 15%;
       padding: 1rem;
       background: #5935ac;
       font-weight: 700;
@@ -87,7 +100,6 @@
       text-transform: uppercase;
       color: white;
       border: none;
-      width: 90%;
       border-radius: 0 1rem 1rem 0;
       transition: all 0.2s ease-in-out;
     }
@@ -109,63 +121,43 @@
         padding: 0.4rem;
         border-radius: 0.8rem;
       }
-    }
 
-    .centered-text {
-      text-align: center;
-    }
-
-    @media (max-width: 500px) {
       .box {
-        width: 90%; 
-      }
-    }
-
-    @media (max-width: 500px) {
-      .input-container input {
-        border-radius: 0.8rem;
-        width: 80%; 
-      }
-
-      .input-container button {
-        padding: 1rem;
-        border-radius: 0.9rem;
-        width: 100%; 
+        width: 90%;
       }
     }
   </style>
 </head>
 <body>
+  <!-- 🔥 Background Video -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="your-video.mp4" type="video/mp4">
+  </video>
+
   <div class="container">
     <div class="main">
       <div class="box" id="box">
         <div id="text">
           <i class="fa fa-user"></i>
-          <p>
-            <h3 class="centered-text">GOLD-MD</h3>
-            <br>
-            <h6>👑 BILAL-MD PAIRING 👑</h6>
-            <h6>🎯 TYPE YOUR WHATSAPP NUMBER 🎯</h6>
-            <div class="input-container">
-              <input placeholder="923078071982" type="number" id="number" placeholder="🎯TYPE NUMBER WITH COUNTRY CODE🎯" name="">
-              <button id="submit">DONE</button>
-            </div>
-            
-            <a id="waiting-message" class="centered-text" style="display: none;">Please wait...</a>
-            <br>
-            <br>
-            <main id="pair"></main>
-          </p>
+          <h3 class="centered-text">GOLD-MD</h3>
+          <h6>👑 BILAL-MD PAIRING 👑</h6>
+          <h6>🎯 TYPE YOUR WHATSAPP NUMBER 🎯</h6>
+          <div class="input-container">
+            <input placeholder="923078071982" type="number" id="number" name="">
+            <button id="submit">DONE</button>
+          </div>
+          <a id="waiting-message" class="centered-text" style="display: none;">Please wait...</a>
+          <main id="pair"></main>
         </div>
       </div>
     </div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
     let a = document.getElementById("pair");
     let b = document.getElementById("submit");
     let c = document.getElementById("number");
-    let box = document.getElementById("box");
 
     async function Copy() {
       let text = document.getElementById("copy").innerText;
@@ -173,11 +165,9 @@
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
       obj.innerText = "COPIED";
       obj.style = "color:blue;font-weight:bold";
-      obj.size = "5";
       setTimeout(() => {
         obj.innerText = text;
-        obj.style = "color:white;font-weight-bold";
-        obj.size = "5";
+        obj.style = "color:white;font-weight:bold";
       }, 500);
     }
 
@@ -189,21 +179,8 @@
         a.innerHTML = '<a style="color:red;font-weight:bold">❗INVALID WHATSAPP NUMBER❗</a><br><br>';
       } else {
         const Wasi_Tech = c.value.replace(/[^0-9]/g, "");
-        let bb = "";
-        let bbc = "";
-        const cc = Wasi_Tech.split('');
-        cc.map(a => {
-          bbc += a;
-          if (bbc.length == 3) {
-            bb += " " + a;
-          } else if (bbc.length == 8) {
-            bb += " " + a;
-          } else {
-            bb += a;
-          }
-        });
         c.type = "text";
-        c.value = "+" + bb;
+        c.value = "+" + Wasi_Tech;
         c.style = "color:black;font-size:20px";
         a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a><br><br>';
         let { data } = await axios(`/code?number=${Wasi_Tech}`);

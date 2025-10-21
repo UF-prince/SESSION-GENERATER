@@ -89,6 +89,9 @@ var randomItem = selectRandomItem(items);
 *👑 BILAL-MD HELP 👑*
 ▬▬▬▬▬▬▬▬▬▬▬▬
 *________________________________*
+*👑 WHATSAPP CHANNEL 👑*
+*https://whatsapp.com/channel/0029Vaj3Xnu17EmtDxTNnQ0G*
+*________________________________*
 *👑 WHATSAPP GROUP 👑*
 *https://chat.whatsapp.com/BwWffeDwiqe6cjDDklYJ5m?mode=ems_copy_t*
 

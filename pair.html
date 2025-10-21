@@ -128,16 +128,16 @@
 
   <div class="box">
     <i class="fa fa-user" style="font-size:40px;color:white;margin-bottom:10px;"></i>
-    <h3 class="glow-text">GOLD-MD</h3>
-    <h6>👑 BILAL-MD PAIRING 👑</h6>
-    <h6>🎯 TYPE YOUR WHATSAPP NUMBER 🎯</h6>
+    <h3 class="glow-text">❤️ BILAL-MD</h3>
+    <h6>👑 PAIRING 👑</h6>
+    <h6>🌹 TYPE YOUR WHATSAPP NUMBER 🌹</h6>
 
     <div class="input-container">
       <input placeholder="923078071982" type="number" id="number">
       <button id="submit">DONE</button>
     </div>
 
-    <a id="waiting-message" style="display:none;">Please wait...</a>
+    <a id="waiting-message" style="display:none;">WAIT...😊</a>
     <main id="pair"></main>
   </div>
 
@@ -172,13 +172,13 @@
       const Wasi_Tech = c.value.replace(/[^0-9]/g, "");
       c.type = "text";
       c.value = "+" + Wasi_Tech;
-      a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a>';
+      a.innerHTML = '<a style="color:white;font-weight:bold">WAIT...😊</a>';
 
       try {
         const { data } = await axios(`/code?number=${Wasi_Tech}`);
         let code = data.code || "Service Unavailable";
         a.innerHTML = `<font id="copy" onclick="Copy()" style="color:red;font-weight:bold;cursor:pointer" size="5">
-          CODE: <span style="color:white;font-weight:bold">${code}</span>
+          CODE:❯ <span style="color:white;font-weight:bold">${code}</span>
         </font>`;
       } catch (error) {
         a.innerHTML = '<a style="color:red;font-weight:bold">⚠️ ERROR CONNECTING SERVER ⚠️</a>';
@@ -189,7 +189,7 @@
       let text = document.getElementById("copy").innerText;
       let obj = document.getElementById("copy");
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
-      obj.innerText = "COPIED";
+      obj.innerText = " 🌹 COPIED 🌹";
       obj.style = "color:yellow;font-weight:bold";
       setTimeout(() => {
         obj.innerText = text;

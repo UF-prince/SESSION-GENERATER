@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>👑 PAIR CODE 👑</title>
+  <title>👑 GOLD-MD PAIR 👑</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     * {
@@ -17,140 +17,135 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       overflow: hidden;
       position: relative;
     }
 
-    /* 🔥 Background Video Style */
+    /* 🔥 Background Video */
     video#bg-video {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* maintain full-screen coverage */
+      object-fit: cover;
       z-index: -1;
+      filter: brightness(0.7);
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 10;
-    }
-
+    /* 🌟 Transparent Center Box */
     .box {
-      width: 300px;
-      height: 320px;
-      padding: 20px;
-      position: relative;
+      width: 330px;
+      padding: 25px;
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.8);
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(250, 249, 249, 0.7);
+      background: rgba(0, 0, 0, 0.35);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      animation: fadeIn 1.2s ease;
     }
 
-    #text {
-      color: #f6f5f5;
+    /* ✨ Lighting Text */
+    .glow-text {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #e100ff, 0 0 20px #e100ff, 0 0 40px #ff0077;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
-    .input-container input {
-      color: #f1eaea;
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff, 0 0 10px #ff0077, 0 0 20px #e100ff; }
+      to { text-shadow: 0 0 10px #fff, 0 0 20px #ff4dc4, 0 0 40px #e100ff; }
     }
 
-    .centered-text {
-      color: #e9e4e4;
-      text-align: center;
+    h6 {
+      color: #fff;
+      text-shadow: 0 0 8px #00eaff;
+      font-size: 1rem;
+      margin-top: 5px;
     }
 
     .input-container {
       display: flex;
-      background: rgb(10, 10, 10);
+      margin-top: 20px;
       border-radius: 1rem;
-      padding: 0.3rem;
-      gap: 0.3rem;
-      max-width: 300px;
+      overflow: hidden;
       width: 100%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
     .input-container input {
-      border-radius: 0.8rem 0 0 0.8rem;
-      background: #e8e8e8;
-      box-shadow: inset 13px 13px 10px #dcdcdc, inset -13px -13px 10px #f4f4f4;
       width: 100%;
       padding: 1rem;
       border: none;
-      border-left: 2px solid #ecf2f8;
-      color: #000000;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .input-container input:focus {
-      border-left: 2px solid #ecf1f6;
       outline: none;
-      box-shadow: inset 13px 13px 10px #f0f2f3, inset -13px -13px 10px #f4f4f4;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      color: #000;
     }
 
     .input-container button {
-      padding: 1rem;
-      background: #5935ac;
+      background: linear-gradient(135deg, #ff0077, #a100ff);
+      color: #fff;
       font-weight: 700;
-      letter-spacing: 0.3rem;
-      text-transform: uppercase;
-      color: white;
       border: none;
-      border-radius: 0 1rem 1rem 0;
-      transition: all 0.2s ease-in-out;
+      padding: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s ease;
+      letter-spacing: 2px;
     }
 
     .input-container button:hover {
-      background: linear-gradient(135deg, #c01736 0%, #8b17b6 100%);
+      background: linear-gradient(135deg, #a100ff, #ff0077);
+      transform: scale(1.05);
+    }
+
+    a, #pair {
+      color: #fff;
+      text-shadow: 0 0 10px #00fff2;
+      display: block;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     @media (max-width: 500px) {
-      .input-container {
-        flex-direction: column;
-      }
-
-      .input-container input {
-        border-radius: 0.8rem;
-      }
-
-      .input-container button {
-        padding: 0.4rem;
-        border-radius: 0.8rem;
-      }
-
       .box {
         width: 90%;
+        padding: 20px;
+      }
+      .glow-text {
+        font-size: 1.4rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- 🔥 Background Video -->
+  <!-- 🎥 Background Video -->
   <video id="bg-video" autoplay muted loop playsinline>
     <source src="https://files.catbox.moe/s40hsj.mp4" type="video/mp4">
   </video>
 
-  <div class="container">
-    <div class="main">
-      <div class="box" id="box">
-        <div id="text">
-          <i class="fa fa-user"></i>
-          <h3 class="centered-text">GOLD-MD</h3>
-          <h6>👑 BILAL-MD PAIRING 👑</h6>
-          <h6>🎯 TYPE YOUR WHATSAPP NUMBER 🎯</h6>
-          <div class="input-container">
-            <input placeholder="923078071982" type="number" id="number" name="">
-            <button id="submit">DONE</button>
-          </div>
-          <a id="waiting-message" class="centered-text" style="display: none;">Please wait...</a>
-          <main id="pair"></main>
-        </div>
-      </div>
+  <div class="box">
+    <i class="fa fa-user" style="font-size:40px;color:white;margin-bottom:10px;"></i>
+    <h3 class="glow-text">GOLD-MD</h3>
+    <h6>👑 BILAL-MD PAIRING 👑</h6>
+    <h6>🎯 TYPE YOUR WHATSAPP NUMBER 🎯</h6>
+
+    <div class="input-container">
+      <input placeholder="923078071982" type="number" id="number" name="">
+      <button id="submit">DONE</button>
     </div>
+
+    <a id="waiting-message" style="display:none;">Please wait...</a>
+    <main id="pair"></main>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
@@ -164,7 +159,7 @@
       let obj = document.getElementById("copy");
       await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
       obj.innerText = "COPIED";
-      obj.style = "color:blue;font-weight:bold";
+      obj.style = "color:yellow;font-weight:bold";
       setTimeout(() => {
         obj.innerText = text;
         obj.style = "color:white;font-weight:bold";
@@ -174,18 +169,17 @@
     b.addEventListener("click", async (e) => {
       e.preventDefault();
       if (!c.value) {
-        a.innerHTML = '<a style="color:white;font-weight:bold">Type Your WhatsApp Number With Country Code</a><br><br>';
+        a.innerHTML = '<a style="color:white;font-weight:bold">Type Your WhatsApp Number With Country Code</a>';
       } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
-        a.innerHTML = '<a style="color:red;font-weight:bold">❗INVALID WHATSAPP NUMBER❗</a><br><br>';
+        a.innerHTML = '<a style="color:red;font-weight:bold">❗INVALID WHATSAPP NUMBER❗</a>';
       } else {
         const Wasi_Tech = c.value.replace(/[^0-9]/g, "");
         c.type = "text";
         c.value = "+" + Wasi_Tech;
-        c.style = "color:black;font-size:20px";
-        a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a><br><br>';
+        a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a>';
         let { data } = await axios(`/code?number=${Wasi_Tech}`);
         let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
+        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold;cursor:pointer" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font>';
       }
     });
   </script>

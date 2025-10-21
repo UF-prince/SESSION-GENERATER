@@ -6,11 +6,7 @@
   <title>👑 GOLD-MD PAIR 👑</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       display: flex;
@@ -25,10 +21,8 @@
     /* 🔥 Background Video */
     video#bg-video {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       object-fit: cover;
       z-index: -1;
       filter: brightness(0.7);
@@ -39,15 +33,14 @@
       width: 330px;
       padding: 25px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.35);
-      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(0, 0, 0, 0.2); /* more transparent */
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 15px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
       animation: fadeIn 1.2s ease;
     }
 
-    /* ✨ Lighting Text */
     .glow-text {
       font-size: 1.6rem;
       font-weight: bold;
@@ -129,8 +122,8 @@
 </head>
 <body>
   <!-- 🎥 Background Video -->
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="https://files.catbox.moe/s40hsj.mp4" type="video/mp4">
+  <video id="bg-video" loop playsinline>
+    <source src="https://files.catbox.moe/v67rhe.mp4" type="video/mp4">
   </video>
 
   <div class="box">
@@ -140,7 +133,7 @@
     <h6>🎯 TYPE YOUR WHATSAPP NUMBER 🎯</h6>
 
     <div class="input-container">
-      <input placeholder="923078071982" type="number" id="number" name="">
+      <input placeholder="923078071982" type="number" id="number">
       <button id="submit">DONE</button>
     </div>
 
@@ -150,9 +143,47 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
-    let a = document.getElementById("pair");
-    let b = document.getElementById("submit");
-    let c = document.getElementById("number");
+    const video = document.getElementById("bg-video");
+    const a = document.getElementById("pair");
+    const b = document.getElementById("submit");
+    const c = document.getElementById("number");
+
+    // 🎵 User clicks => start video with sound
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      try {
+        // ✅ Audio will play after user action
+        video.muted = false;
+        await video.play();
+      } catch (err) {
+        console.log("Audio play blocked until user interaction", err);
+      }
+
+      if (!c.value) {
+        a.innerHTML = '<a style="color:white;font-weight:bold">Type Your WhatsApp Number With Country Code</a>';
+        return;
+      } 
+      if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<a style="color:red;font-weight:bold">❗INVALID WHATSAPP NUMBER❗</a>';
+        return;
+      }
+
+      const Wasi_Tech = c.value.replace(/[^0-9]/g, "");
+      c.type = "text";
+      c.value = "+" + Wasi_Tech;
+      a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a>';
+
+      try {
+        const { data } = await axios(`/code?number=${Wasi_Tech}`);
+        let code = data.code || "Service Unavailable";
+        a.innerHTML = `<font id="copy" onclick="Copy()" style="color:red;font-weight:bold;cursor:pointer" size="5">
+          CODE: <span style="color:white;font-weight:bold">${code}</span>
+        </font>`;
+      } catch (error) {
+        a.innerHTML = '<a style="color:red;font-weight:bold">⚠️ ERROR CONNECTING SERVER ⚠️</a>';
+      }
+    });
 
     async function Copy() {
       let text = document.getElementById("copy").innerText;
@@ -165,23 +196,6 @@
         obj.style = "color:white;font-weight:bold";
       }, 500);
     }
-
-    b.addEventListener("click", async (e) => {
-      e.preventDefault();
-      if (!c.value) {
-        a.innerHTML = '<a style="color:white;font-weight:bold">Type Your WhatsApp Number With Country Code</a>';
-      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
-        a.innerHTML = '<a style="color:red;font-weight:bold">❗INVALID WHATSAPP NUMBER❗</a>';
-      } else {
-        const Wasi_Tech = c.value.replace(/[^0-9]/g, "");
-        c.type = "text";
-        c.value = "+" + Wasi_Tech;
-        a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a>';
-        let { data } = await axios(`/code?number=${Wasi_Tech}`);
-        let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold;cursor:pointer" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font>';
-      }
-    });
   </script>
 </body>
-</html>
+  </html>

@@ -3,374 +3,226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>👑 PAIR CODE 👑</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <title>POPKID-XTR PAIR CODE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #000000;
-      --secondary-color: #ffffff;
-      --accent-color: #f0f0f0;
-      --text-color: #000000;
-      --background-color: #252A35;
-      --hover-color: #f5f5f5;
-      --border-color: rgba(0, 0, 0, 0.1);
+      --accent: #00ffe7;
+      --accent2: #ff0080;
+      --bg-dark: #020202;
+      --glass: rgba(15, 15, 25, 0.75);
+      --text: #eafaff;
     }
 
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      height: 100%;
+      background: var(--bg-dark);
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text);
+      overflow: hidden;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background-color);
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 400px;
-      background: var(--background-color);
-      border-radius: 16px;
-      padding: 25px;
-      box-shadow: 0 4px 8px 16px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--border-color);
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .logo {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 16px;
-      background: var(--primary-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      color: white;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: white;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.7);
-      margin-bottom: 20px;
-      color: white;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .social-icons a {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .social-icons a.youtube { background: #FF0000; }
-    .social-icons a.telegram { background: #0088cc; }
-    .social-icons a.whatsapp { background: #0cfa10; }
-    .social-icons a.github { background: #333; }
-
-    .social-icons a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .input-group {
-      margin-bottom: 20px;
-    }
-
-    .input-label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      font-size: 13px;
-      color: white;
-    }
-
-    .input-field {
-      width: 100%;
-      padding: 12px;
-      border: 1.5px solid var(--border-color);
-      border-radius: 12px;
-      background: var(--background-color);
-      color: var(--text-color);
-      font-size: 15px;
-    }
-
-    .input-field:focus {
-      outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-    }
-
-    .generate-btn {
-      width: 100%;
-      padding: 12px;
-      background: var(--primary-color);
-      border: none;
-      border-radius: 12px;
-      color: var(--secondary-color);
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-bottom: 16px;
-    }
-
-    .generate-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .code-display {
-      background: #002E39;
-      padding: 12px;
-      border-radius: 12px;
-      text-align: center;
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      min-height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid var(--border-color);
-    }
-
-    .copy-btn {
-      width: 100%;
-      padding: 12px;
-      background: var(--hover-color);
-      border: 1.5px solid var(--border-color);
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      display: none; /* caché par défaut */
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .copy-btn:hover {
-      background: var(--background-color);
-      border-color: var(--primary-color);
-    }
-
-    .success-message {
-      color: #000aff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 16px;
-    }
-
-    .error-message {
-      color: #e74c3c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-    }
-
-    .loading {
-      display: none;
-      text-align: center;
-      margin: 16px 0;
-    }
-
-    .loading i {
-      font-size: 24px;
-      color: var(--primary-color);
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 12px;
-      color: white;
-    }
-
-    /* Toast styles */
-    #toast {
-      display: none;
+    /* Background grid effect */
+    body::before {
+      content: "";
       position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #000aff;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.3s ease;
-      opacity: 0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0,255,255,0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
+      animation: moveGrid 20s linear infinite;
     }
 
-    @media (max-width: 480px) {
-      .container {
-        padding: 20px;
-        border-radius: 12px;
-      }
+    @keyframes moveGrid {
+      from { background-position: 0 0; }
+      to { background-position: 40px 40px; }
+    }
 
-      .code-display {
-        font-size: 16px;
-        min-height: 50px;
-      }
+    /* Container */
+    .frame {
+      position: relative;
+      z-index: 5;
+      max-width: 360px;
+      margin: auto;
+      top: 20%;
+      padding: 35px 30px;
+      border-radius: 18px;
+      background: var(--glass);
+      backdrop-filter: blur(14px) saturate(180%);
+      border: 1px solid rgba(0, 255, 255, 0.25);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.35), 0 0 50px rgba(255, 0, 128, 0.25);
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Glitch Header */
+    .title {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      text-transform: uppercase;
+      color: var(--accent);
+      position: relative;
+      animation: glitch 2s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 var(--accent2), -2px 0 var(--accent); }
+      20% { text-shadow: -2px -2px var(--accent2), 2px 2px var(--accent); }
+      40% { text-shadow: 2px -2px var(--accent2), -2px 2px var(--accent); }
+      60%, 100% { text-shadow: none; }
+    }
+
+    /* Input & Button */
+    .input-container {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .input-container input {
+      flex: 1;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(0,255,255,0.4);
+      background: rgba(255,255,255,0.1);
+      color: var(--text);
+      outline: none;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .input-container input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .input-container button {
+      padding: 12px 16px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      transition: 0.3s;
+      box-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
+    }
+
+    .input-container button:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.7),
+                  0 0 30px rgba(255, 0, 128, 0.4);
+    }
+
+    /* Terminal response */
+    #waiting-message {
+      display: none;
+      font-family: 'Share Tech Mono', monospace;
+      text-align: left;
+      background: rgba(0,0,0,0.6);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      border: 1px solid rgba(0,255,255,0.2);
+      box-shadow: inset 0 0 10px rgba(0,255,255,0.2);
+    }
+
+    /* Copy button */
+    #copy-btn {
+      display: none;
+      margin-top: 15px;
+      padding: 10px 18px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #fff;
+      background: linear-gradient(135deg, #00ff99, #00cc66);
+      box-shadow: 0 0 12px rgba(0,255,150,0.6);
+      transition: 0.3s;
+    }
+
+    #copy-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px rgba(0,255,150,0.9);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="logo"><i class="fas fa-robot"></i></div>
-      <h1 class="title">𝐒𝐏𝐈𝐑𝐈𝐓𝐘-𝐗𝐌𝐃</h1>
-      <p class="subtitle">Generate your WhatsApp pair code</p>
-      <div class="social-icons">
-        <a href="https://www.youtube.com/@Azahackkiller" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-        <a href="https://t.me/+a1qvpSniSt1jMDFk" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://https://whatsapp.com/channel/0029VbAfF6f1dAw7hJidqS0i" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://github.com/DARKMAN226/SPIRITY-XMD.git" target="_blank" class="github"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
 
-    <div class="input-group">
-      <label class="input-label">Enter your WhatsApp number with country code</label>
-      <input type="tel" id="mobileNumber" class="input-field" placeholder="EX ; 226XXXXXX" pattern="[+][0-9]{10,}" title="Please enter country code starting with + followed by number">
-    </div>
+<div class="frame">
+  <p class="title">POPKID-XTR PAIR SITE</p>
 
-    <button class="generate-btn" id="submit">
-      <i class="fas fa-key"></i> Generate Pair Code
-    </button>
-
-    <div class="loading" id="loading">
-      <i class="fas fa-spinner"></i>
-    </div>
-
-    <div class="code-display" id="codeDisplay">
-      Your pair code will appear here
-    </div>
-
-    <button class="copy-btn" id="copy" onclick="copyCode()">
-      <i class="fas fa-copy"></i> Copy Code
-    </button>
-
-    <div class="footer">
-      <p>© 2025 𝙳̷𝚊̷𝚛̷𝚔̷-𝙳̷𝙴̷𝚟̷🩸 | SPIRITY-XMD</p>
-    </div>
+  <div class="input-container">
+    <input placeholder="Enter WhatsApp Number" type="number" id="number">
+    <button id="submit">ENTER</button>
   </div>
 
-  <!-- Toast -->
-  <div id="toast">Code copied to clipboard!</div>
+  <p id="waiting-message">Please Wait...</p>
+  <button id="copy-btn">📋 Copy Code</button>
+</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
-  <script>
-    document.getElementById("submit").addEventListener("click", async (e) => {
-      e.preventDefault();
-      const mobileNumberInput = document.getElementById("mobileNumber");
-      const codeDisplay = document.getElementById("codeDisplay");
-      const loadingSpinner = document.getElementById("loading");
+<script>
+  const msg = document.getElementById("waiting-message");
+  const submitBtn = document.getElementById("submit");
+  const numberInput = document.getElementById("number");
+  const copyBtn = document.getElementById("copy-btn");
 
-      const mobileNumber = mobileNumberInput.value.trim();
-      if (!mobileNumber) {
-        codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter your WhatsApp number</div>';
-        document.getElementById("copy").style.display = "none";
-        return;
-      }
+  submitBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const value = numberInput.value.replace(/[^0-9]/g, "");
 
-      loadingSpinner.style.display = "block";
-      codeDisplay.innerHTML = '';
-      document.getElementById("copy").style.display = "none";
-
-      try {
-        const response = await axios(`/code?number=${mobileNumber.replace(/[^0-9]/g, "")}`);
-        const code = response.data.code || "Service Unavailable";
-        if (code === "Service Unavailable") {
-          codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Service Unavailable</div>';
-        } else {
-          codeDisplay.innerHTML = `<div class="success-message"><i class="fas fa-check-circle"></i> CODE: ${code}</div>`;
-          document.getElementById("copy").style.display = "flex";
-        }
-      } catch (error) {
-        console.error("Error generating code:", error);
-        codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Error generating code. Please try again.</div>';
-      } finally {
-        loadingSpinner.style.display = "none";
-      }
-    });
-
-    function copyCode() {
-      const codeDisplay = document.getElementById("codeDisplay").innerText;
-      const code = codeDisplay.replace('CODE: ', '');
-      const copyBtn = document.getElementById("copy");
-
-      navigator.clipboard.writeText(code).then(() => {
-        const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        copyBtn.disabled = true;
-        copyBtn.style.opacity = "0.6";
-        copyBtn.style.cursor = "not-allowed";
-
-        const toast = document.getElementById("toast");
-        toast.style.display = "block";
-        toast.style.opacity = "1";
-
-        setTimeout(() => {
-          copyBtn.innerHTML = originalText;
-          copyBtn.disabled = false;
-          copyBtn.style.opacity = "1";
-          copyBtn.style.cursor = "pointer";
-
-          toast.style.opacity = "0";
-          setTimeout(() => {
-            toast.style.display = "none";
-          }, 300);
-        }, 2000);
-      }).catch(err => {
-        console.error("Failed to copy text: ", err);
-      });
+    if (!value) {
+      msg.innerText = "⚠ Enter your WhatsApp number with Country Code";
+      msg.style.display = "block";
+      copyBtn.style.display = "none";
+      return;
     }
-  </script>
+
+    if (value.length < 11) {
+      msg.innerText = "❌ Invalid Number";
+      msg.style.display = "block";
+      copyBtn.style.display = "none";
+      return;
+    }
+
+    msg.innerText = "⏳ Please Wait...";
+    msg.style.display = "block";
+
+    try {
+      const res = await fetch(`/code?number=${value}`);
+      const data = await res.json();
+      const code = data.code || "Service Unavailable";
+
+      msg.innerText = "✅ CODE: " + code;
+      copyBtn.style.display = "inline-block";
+
+      copyBtn.onclick = () => {
+        navigator.clipboard.writeText(code);
+        copyBtn.innerText = "✔ Copied!";
+        setTimeout(() => (copyBtn.innerText = "📋 Copy Code"), 2000);
+      };
+    } catch (err) {
+      msg.innerText = "❌ Error fetching code.";
+      copyBtn.style.display = "none";
+    }
+  });
+</script>
+
 </body>
 </html>

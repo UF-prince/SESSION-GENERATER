@@ -75,29 +75,32 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "POPKID;;;" + string_session;
+                        let md = "BILAL-MD~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `╭━━━━━━━━━━━━━━━━━━━━━╮
-┃  🚀 POPKID XTR USER ✅  ┃
-╰━━━━━━━━━━━━━━━━━━━━━╯
+                        let desc = `┏━━━━━━━━━━━━━━😘
+┃👑┃ *BILAL-MD CONNECTED* 
+┃👑┃ *SESSION-ID RECEIVED*
+┗━━━━━━━━━━━━━━━😘
+*________________________________*
+*👑 BILAL-MD REPO 👑*
+*github.com/BilalTech05/BILAL-MD*
+*________________________________*
+▬▬▬▬▬▬▬▬▬▬▬▬
+*👑 BILAL-MD HELP 👑*
+▬▬▬▬▬▬▬▬▬▬▬▬
+*________________________________*
+*👑 WHATSAPP CHANNEL 👑*
+*https://whatsapp.com/channel/0029Vaj3Xnu17EmtDxTNnQ0G*
+*________________________________*
+*👑 WHATSAPP GROUP 👑*
+*https://chat.whatsapp.com/BwWffeDwiqe6cjDDklYJ5m?mode=ems_copy_t*
 
-👋🏻 Hello there,POPKID-XTR User!
-
-> ⚠️ *Do not share your session ID with your GF!* 🤖
-
-✅ **Thanks for using POPKID-XTR**  🚀
-
-━━━━━━━━━━━━━━━━━━━━━━━
-
-📢 **Join our WhatsApp Channel:**
-🔗 https://whatsapp.com/channel/0029VbB6d0KKAwEdvcgqrH26
-
-⭐ **Don't forget to fork the repo:**
-🔗 https://github.com/kenyanpopkid/POPKID-XTR
-
-━━━━━━━━━━━━━━━━━━━━━━━
-
-> *© POPKID DEVS 🔰*`; 
+*________________________________*
+*👑 DEVELPER 👑*
+*https://akaserein.github.io/Bilal/*
+*________________________________*
+*_PLEASE BILAL-MD REPO KO STAR LAZMI KARNA 🥰❤️_*
+*________________________________*`; 
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {

@@ -89,9 +89,6 @@ var randomItem = selectRandomItem(items);
 *👑 BILAL-MD HELP 👑*
 ▬▬▬▬▬▬▬▬▬▬▬▬
 *________________________________*
-*👑 WHATSAPP CHANNEL 👑*
-*https://whatsapp.com/channel/0029Vaj3Xnu17EmtDxTNnQ0G*
-*________________________________*
 *👑 WHATSAPP GROUP 👑*
 *https://chat.whatsapp.com/BwWffeDwiqe6cjDDklYJ5m?mode=ems_copy_t*
 
@@ -105,9 +102,9 @@ var randomItem = selectRandomItem(items);
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "popkid xtr",
-thumbnailUrl: "https://i.ibb.co/6cBHT8tC/popkid.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029VbB6d0KKAwEdvcgqrH26",
+title: "👑 BILAL-MD BOT 👑",
+thumbnailUrl: "https://files.catbox.moe/kunzpz.png",
+sourceUrl: "https://whatsapp.com/channel/0029Vaj3Xnu17EmtDxTNnQ0G",
 mediaType: 1,
 renderLargerThumbnail: true
 }  
